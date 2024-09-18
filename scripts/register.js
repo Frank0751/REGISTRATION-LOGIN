@@ -1,7 +1,22 @@
 // Get form element by id
-const registerForm = document.getElementById('register');
-// Handle formn submit event
-registerForm.onsubmit = function(event) {
+const registerForm = document.querySelector('#register');
+// Handle form submit event
+registerForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    console.log(event)
+    //Collect form data
+    const formData = new FormData(registerForm);
+    //Send data to backend
+    //Display success message to user
+    const messageH1 = document.querySelector('#message');
+    messageH1.textContent = 'Account registered successfully!';
+});
+
+// Declare variabler age
+const age = 71;
+// Define square age function
+function squareAge(age) {
+    return age ** 2
 }
+
+const squaredAge = squareAge(34)
+console.log(squaredAge);
